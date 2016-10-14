@@ -1,0 +1,26 @@
+<!-- <h3> 请上传你的CSV </h3>
+
+<div class="upload_file">
+  <%= form_tag uploads_path, method: :post, multipart: true do %>
+    <%= file_field_tag "file" %>
+    <%= submit_tag 'submit' %>
+  <% end %>
+</div> -->
+
+<h3> 请输入数据 e.g. Input (first name, last name, annual salary, super rate (%), payment start date) </h3>
+<hr>
+
+<%= form_tag uploads_path, method: :post, remote: true do %>
+  <%= text_field_tag(:first_name, params[:first_name], placeholder: "FirstName", class: "form-control") %>
+  <%= text_field_tag(:last_name, params[:last_name], placeholder: "LastName", class: "form-control") %>
+  <%= text_field_tag(:annual_salary, params[:annual_salary], placeholder: "AnnualSalary", class: "form-control") %>
+  <%= text_field_tag(:super_rate, params[:super_rate], placeholder: "SuperRate", class: "form-control") %>
+  <%= text_field_tag(:start_date, params[:start_date], placeholder: "e.g: 01 March", class: "form-control") %>
+  <%= submit_tag 'submit' %>
+<% end %>
+
+<hr />
+
+<div class="ans-table">
+
+</div>

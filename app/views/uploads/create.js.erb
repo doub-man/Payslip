@@ -1,0 +1,3 @@
+(function() {
+  $('.ans-table').replaceWith("<%= j(render(:partial => 'uploads/ans', locals: { ans: @ans} )) %>")
+})();
